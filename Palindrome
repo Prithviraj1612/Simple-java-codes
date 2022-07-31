@@ -1,0 +1,44 @@
+//Java program to check for palindrome (Integer)
+import java.util.*;
+public class Palindrome {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		  int r,sum=0,temp;
+		  Scanner scan=new Scanner(System.in);
+		  int n=scan.nextInt();//It is the number variable to be checked for palindrome  
+		  
+		  temp=n;    
+		  while(n>0){    
+		   r=n%10;  //getting remainder  
+		   sum=(sum*10)+r;    
+		   n=n/10;    
+		  }    
+		  if(temp==sum)    
+		   System.out.println("palindrome number ");    
+		  else    
+		   System.out.println("not palindrome");    
+		 scan.close();
+		}  
+	}
+
+//Program For checking string as a palindrome
+class Main {
+	  public static void main(String[] args) {
+
+	    String str = "Radar", reverseStr = "";
+	    
+	    int strLength = str.length();//Capture String length
+
+	    for (int i = (strLength - 1); i >=0; --i) {//reverse loop starting from end of the loop
+	      reverseStr = reverseStr + str.charAt(i);// Adding last char or str to ReverseStr
+	    }
+
+	    if (str.toLowerCase().equals(reverseStr.toLowerCase())) {//Changing both the output to lower case
+	      System.out.println(str + " is a Palindrome String.");
+	    }
+	    else {
+	      System.out.println(str + " is not a Palindrome String.");
+	    }
+	  }
+	}
