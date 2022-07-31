@@ -1,0 +1,30 @@
+// write a program to find out whether a given integer is persent in an array or not
+import java.util.*;
+public class arr_prtc_2 {
+		public static void main(String[] args) {
+		{
+		int [] nums = {23,46,75,99,52,86};
+		Scanner scan = new Scanner(System.in);
+		int find = scan.nextInt();
+		boolean result= false; // we took this variable so that we can save the outcome
+							  //weather the value is present in array or not 
+		for(int i=0;i<nums.length;i++)
+		{
+			if(nums[i] == find){
+				//System.out.println("value found");
+				//by above method it would print "value found length-1 times
+				result =  true;
+			}
+			//else
+			//	System.out.println("value not found");
+		}
+		if(result){
+			System.out.println("value is present");
+		}
+		else{
+			System.out.println("value is not present");
+		}
+	scan.close();
+	}
+}
+}
