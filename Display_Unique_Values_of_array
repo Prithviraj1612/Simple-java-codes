@@ -1,0 +1,23 @@
+//Print a Array with unique elements
+import java.util.*;
+public class Display_Unique_Values_of_array {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int [] val= {1,2,3,1,4,3,5};
+		Arrays.sort(val);//1,1,2,3,3,4,5 This is a inbuilt method to sort an array
+		int j=0;//Used as a counter variable 
+		for(int i=0;i<val.length-1;i++)
+		{
+
+			if(val[i]!=val[i+1])
+			{
+				val[j++]=val[i];//here if condition is satisfied the counter of j will store the element like 0th,1th...
+			}
+		}
+		val[j++]=val[val.length-1];//comparing last element in the array which cannot be repeated 
+		for(int k=0;k<j;k++) {
+			System.out.println(val[k]);//print loop
+		}
+	}
+}
