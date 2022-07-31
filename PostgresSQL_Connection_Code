@@ -1,0 +1,22 @@
+//package dbprtc;
+import java.sql.Connection;
+import java.sql.DriverManager;
+public class database_conn {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String jdbcURL = "jdbc:postgresql://localhost:5432/'Your_Table_name'";
+		String username = "Your_user_name";
+		String pass = "Your_database_password";
+		try {
+			Connection conn =DriverManager.getConnection(jdbcURL,username,pass);
+			System.out.println("Connected");
+			conn.close();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			//System.out.println("Error in connection");
+			e.printStackTrace();
+		}
+		
+}
+}
