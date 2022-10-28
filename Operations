@@ -1,0 +1,74 @@
+//Simple java Program to Check for Palindrome String, Number and String reverse using method, Scanner fun and switch case
+
+
+import java.util.*;
+class Operations
+{
+	void reverse(String s1){
+		            
+					int len=s1.length();
+					String rev="";
+					for(int i=len-1;i>=0;i--)
+					{
+							rev=rev+s1.charAt(i);
+					}
+					System.out.println("Reverse String is: "+rev);
+			}
+	void palin(String s2){
+					int len1=s2.length();
+					String rev1="";
+					String comp=s2;
+					for(int i=len1-1;i>=0;i--)
+					{
+							rev1=rev1+s2.charAt(i);
+					}
+					if(rev1.toLowerCase().equals(comp.toLowerCase())){
+						System.out.println(comp+" String is Plaindrome");
+					}
+					else{
+						System.out.println(comp+ " String is not Palindrome");
+					}
+			}
+	void numpalin(int a)
+	{
+		int comp1,rem,sum=0;
+		comp1=a;
+		while(a>0)
+		{
+			rem=a%10;
+			sum=(sum*10)+rem;
+			a=a/10;
+		}
+		if(comp1==sum)
+			System.out.println("Number is Palindrome");
+		else	
+			System.out.println("Number is not Palindromne");
+	}	
+	
+	public static void main(String args[]){
+		Scanner sc=new Scanner(System.in);
+		Operations opp=new Operations();
+		System.out.println("Select which operation to be performed : /n 1) String Reverse /n 2)String Palindrome /n 3) Number Palindrome:");
+		int choice=sc.nextInt();
+		sc.nextLine();//After Scanning a int value we cant scan a string it would take the string as null to remove that issue we have scanned a empty line
+		switch(choice)
+		{
+				case 1:
+					System.out.println("Enter the String to be reversed:");
+					String s=sc.nextLine();
+					opp.reverse(s);
+					break;
+				case 2:
+					System.out.println("Enter the String to check for palindrome:");
+					String S1=sc.nextLine();
+					opp.palin(S1);
+					break;
+				case 3:
+					System.out.println("Enter the number to check for palindrome");
+					int A=sc.nextInt();
+					opp.numpalin(A);
+					break;
+		}
+	}
+	
+}
